@@ -1,7 +1,7 @@
 #include <iostream>
-#include "Player.h"
-#include "Idle.h"
-#include "Debug.h"
+#include <Player.h>
+#include <Idle.h>
+#include <Debug.h>
 
 Player::Player()
 {
@@ -43,8 +43,12 @@ void Player::handleInput(Input in)
 		m_animation.jumping();
 		break;
 	case Input::Action::RIGHT:
-		//std::cout << "Player Idling" << std::endl;
+		//std::cout << "Player Right" << std::endl;
 		m_animation.jumping();
+		break;
+	case Input::Action::RSHIFT:
+		//std::cout << "Player Space" << std::endl;
+		m_animation.hammering();
 		break;
 	default:
 		break;

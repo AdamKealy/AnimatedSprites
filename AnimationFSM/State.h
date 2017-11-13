@@ -4,9 +4,9 @@
 #include <iostream>
 #include <typeinfo>
 
-#include "Input.h"
-#include "Animation.h"
-#include "Debug.h"
+#include <Input.h>
+#include <Animation.h>
+#include <Debug.h>
 
 class State
 {
@@ -26,6 +26,10 @@ public:
 	virtual void climbing(Animation* a)
 	{
 		DEBUG_MSG("State::Climbing");
+	}
+	virtual void hammering(Animation* a)
+	{
+		DEBUG_MSG("State::Hammering");
 	}
 };
 

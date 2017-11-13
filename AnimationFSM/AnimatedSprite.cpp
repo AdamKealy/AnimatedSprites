@@ -1,4 +1,4 @@
-#include "AnimatedSprite.h"
+#include <AnimatedSprite.h>
 
 AnimatedSprite::AnimatedSprite() 
 {
@@ -49,4 +49,3 @@ void AnimatedSprite::update(){
 		m_clock.restart();
 	}
 }
-

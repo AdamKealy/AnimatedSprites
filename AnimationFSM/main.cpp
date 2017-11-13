@@ -1,9 +1,9 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "AnimatedSprite.h"
-#include "Player.h"
-#include "Input.h"
-#include "Debug.h"
+#include <AnimatedSprite.h>
+#include <Player.h>
+#include <Input.h>
+#include <Debug.h>
 
 using namespace std;
 
@@ -57,6 +57,21 @@ int main()
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 				{
 					input.setCurrent(Input::Action::UP);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::RShift))
+				{
+					input.setCurrent(Input::Action::RSHIFT);
+				}
+/// <summary>
+/// /////////////////////////////////YOU ARE HERE
+/// </summary>
+/// <returns></returns>
+			case sf::Event::TextEntered:
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+				{
+					std::cout << "lol" << std::endl;
+					input.setCurrent(Input::Action::SPACE);
+
 				}
 				break;
 			default:

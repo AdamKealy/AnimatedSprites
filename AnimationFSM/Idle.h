@@ -1,7 +1,7 @@
 #ifndef IDLE_H
 #define IDLE_H
 
-#include "State.h"
+#include <State.h>
 
 class Idle : public State
 {
@@ -12,6 +12,7 @@ public:
 	void update();
 	void jumping(Animation* a);
 	void climbing(Animation* a);
+	void hammering(Animation* a);
 };
 
 #endif // !IDLE_H

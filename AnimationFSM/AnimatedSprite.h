@@ -4,7 +4,7 @@
 #include <SFML\Graphics\Sprite.hpp>
 #include <SFML\System\Clock.hpp>
 #include <vector>
-#include "Debug.h"
+#include <Debug.h>
 
 using namespace std;
 using namespace sf;
