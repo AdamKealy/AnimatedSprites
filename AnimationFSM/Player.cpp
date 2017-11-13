@@ -45,7 +45,7 @@ void Player::handleInput(Input in)
 	case Input::Action::SPACE:
 		m_animation.jumping();
 		break;
-	case Input::Action::LCTRL:
+	case Input::Action::X:
 		m_animation.shooting();
 		break;
 	case Input::Action::DOWN:

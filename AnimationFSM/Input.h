@@ -14,7 +14,7 @@ public:
 		RIGHT,
 		DOWN,
 		SPACE,
-		LCTRL
+		X
 
 	};
 

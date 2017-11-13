@@ -67,9 +67,9 @@ int main()
 				{
 					input.setCurrent(Input::Action::SPACE);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::LControl))
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
 				{
-					input.setCurrent(Input::Action::LCTRL);
+					input.setCurrent(Input::Action::X);
 				}
 				break;
 			default:
