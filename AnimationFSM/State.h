@@ -27,9 +27,17 @@ public:
 	{
 		DEBUG_MSG("State::Climbing");
 	}
-	virtual void hammering(Animation* a)
+	virtual void shooting(Animation* a)
 	{
-		DEBUG_MSG("State::Hammering");
+		DEBUG_MSG("State::Shooting");
+	}
+	virtual void walking(Animation* a)
+	{
+		DEBUG_MSG("State::Walking");
+	}
+	virtual void sliding(Animation* a)
+	{
+		DEBUG_MSG("State::Sliding")
 	}
 };
 

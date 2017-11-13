@@ -1,18 +1,18 @@
-#ifndef JUMPING_H
-#define JUMPING_H
+#ifndef WALKING_H
+#define WALKING_H
 
 #include <State.h>
 
-class Jumping : public State
+class Walking : public State
 {
 public:
-	Jumping() {};
-	~Jumping() {};
+	Walking() {};
+	~Walking() {};
 	void idle(Animation* a);
+	void jumping(Animation* a);
 	void climbing(Animation* a);
 	void shooting(Animation* a);
-	void walking(Animation* a);
 	void sliding(Animation* a);
 };
 
-#endif // !IDLE_H
+#endif // !WALKING_H

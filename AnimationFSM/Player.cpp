@@ -31,25 +31,25 @@ void Player::handleInput(Input in)
 	switch (in.getCurrent())
 	{
 	case Input::Action::IDLE:
-		//std::cout << "Player Idling" << std::endl;
 		m_animation.idle();
 		break;
 	case Input::Action::UP:
-		//std::cout << "Player Up" << std::endl;
 		m_animation.climbing();
 		break;
 	case Input::Action::LEFT:
-		//std::cout << "Player Left" << std::endl;
-		m_animation.jumping();
+		m_animation.walking();
 		break;
 	case Input::Action::RIGHT:
-		//std::cout << "Player Right" << std::endl;
+		m_animation.walking();
+		break;
+	case Input::Action::SPACE:
 		m_animation.jumping();
 		break;
-	case Input::Action::RSHIFT:
-		//std::cout << "Player Space" << std::endl;
-		m_animation.hammering();
+	case Input::Action::LCTRL:
+		m_animation.shooting();
 		break;
+	case Input::Action::DOWN:
+		m_animation.sliding();
 	default:
 		break;
 	}

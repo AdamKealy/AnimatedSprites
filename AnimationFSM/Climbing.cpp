@@ -1,6 +1,8 @@
 #include <Climbing.h>
 #include <Jumping.h>
-#include <Hammering.h>
+#include <Shooting.h>
+#include <Walking.h>
+#include <Sliding.h>
 #include <Idle.h>
 
 #include <string>
@@ -18,9 +20,23 @@ void Climbing::jumping(Animation* a)
 	delete this;
 }
 
-void Climbing::hammering(Animation * a)
+void Climbing::shooting(Animation * a)
 {
-	std::cout <<"Climbing -> Hammering" << std::endl;
-	a->setCurrent(new Hammering());
+	std::cout <<"Climbing -> Shooting" << std::endl;
+	a->setCurrent(new Shooting());
+	delete this;
+}
+
+void Climbing::walking(Animation * a)
+{
+	std::cout << "Climbing -> Walking" << std::endl;
+	a->setCurrent(new Walking());
+	delete this;
+}
+
+void Climbing::sliding(Animation * a)
+{
+	std::cout << "Climbing -> Sliding" << std::endl;
+	a->setCurrent(new Sliding());
 	delete this;
 }

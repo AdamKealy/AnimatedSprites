@@ -12,8 +12,10 @@ public:
 		UP,
 		LEFT,
 		RIGHT,
-		RSHIFT,
-		SPACE
+		DOWN,
+		SPACE,
+		LCTRL
+
 	};
 
 	void setCurrent(Action);

@@ -54,24 +54,22 @@ int main()
 				{
 					input.setCurrent(Input::Action::RIGHT);
 				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+				{
+					input.setCurrent(Input::Action::DOWN);
+				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 				{
 					input.setCurrent(Input::Action::UP);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::RShift))
-				{
-					input.setCurrent(Input::Action::RSHIFT);
-				}
-/// <summary>
-/// /////////////////////////////////YOU ARE HERE
-/// </summary>
-/// <returns></returns>
 			case sf::Event::TextEntered:
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 				{
-					std::cout << "lol" << std::endl;
 					input.setCurrent(Input::Action::SPACE);
-
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::LControl))
+				{
+					input.setCurrent(Input::Action::LCTRL);
 				}
 				break;
 			default:

@@ -43,7 +43,17 @@ void Animation::climbing()
 	m_current->climbing(this);
 }
 
-void Animation::hammering()
+void Animation::shooting()
 {
-	m_current->hammering(this);
+	m_current->shooting(this);
+}
+
+void Animation::walking()
+{
+	m_current->walking(this);
+}
+
+void Animation::sliding()
+{
+	m_current->sliding(this);
 }
