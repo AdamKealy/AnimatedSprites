@@ -21,12 +21,12 @@ int main()
 
 	// Setup Players Default Animated Sprite
 	AnimatedSprite animated_sprite(texture);
-	animated_sprite.addFrame(sf::IntRect(3, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(88, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(173, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(258, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(343, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(428, 3, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(3, 3, 84, 84));		//Climbing
+	animated_sprite.addFrame(sf::IntRect(88, 3, 84, 84));		//Walking
+	animated_sprite.addFrame(sf::IntRect(173, 3, 84, 84));		//Shooting
+	animated_sprite.addFrame(sf::IntRect(258, 3, 84, 84));		//Jumping
+	animated_sprite.addFrame(sf::IntRect(343, 3, 84, 84));		//Slide 
+	animated_sprite.addFrame(sf::IntRect(428, 3, 84, 84));		//Idle
 
 	// Setup the Player
 	Player player(animated_sprite);

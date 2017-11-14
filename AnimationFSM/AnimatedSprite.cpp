@@ -13,39 +13,50 @@ AnimatedSprite::AnimatedSprite(const sf::Texture& t, const sf::IntRect& rect) : 
 
 AnimatedSprite::~AnimatedSprite() {}
 
-const sf::Clock& AnimatedSprite::getClock() {
+const sf::Clock& AnimatedSprite::getClock() 
+{
 	return m_clock;
 }
 
-const sf::Time& AnimatedSprite::getTime() {
+const sf::Time& AnimatedSprite::getTime() 
+{
 	return m_time;
 }
 
-const vector<IntRect>& AnimatedSprite::getFrames() {
+const vector<IntRect>& AnimatedSprite::getFrames() 
+{
 	return m_frames;
 }
 
-const IntRect& AnimatedSprite::getFrame(int n) {
+const IntRect& AnimatedSprite::getFrame(int n) 
+{
 	return m_frames[n];
 }
 
-void AnimatedSprite::addFrame(IntRect& frame) {
+void AnimatedSprite::addFrame(IntRect& frame) 
+{
 	m_frames.push_back(frame);
 }
 
-const int AnimatedSprite::getCurrentFrame() {
+const int AnimatedSprite::getCurrentFrame() 
+{
 	return m_current_frame;
 }
 
-void AnimatedSprite::update(){
-	if (m_clock.getElapsedTime() > m_time) {
+void AnimatedSprite::update()
+{
+	
+	if (m_clock.getElapsedTime() > m_time) 
+	{
 		if (m_frames.size() > m_current_frame + 1)
 		{
 			m_current_frame++;
 		}
-		else {
+		else 
+		{
 			m_current_frame = 0;
 		}
 		m_clock.restart();
 	}
+
 }
