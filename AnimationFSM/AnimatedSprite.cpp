@@ -45,7 +45,61 @@ const int AnimatedSprite::getCurrentFrame()
 
 void AnimatedSprite::update()
 {
-	
+	m_frames.clear();
+
+	switch (animation)
+	{
+	default:
+	case 0:
+		addFrame(sf::IntRect(3, 3, 84, 84));
+		addFrame(sf::IntRect(88, 3, 84, 84));
+		addFrame(sf::IntRect(173, 3, 84, 84));
+		addFrame(sf::IntRect(258, 3, 84, 84));
+		break;
+
+	case 1:
+		addFrame(sf::IntRect(343, 3, 84, 84));
+		addFrame(sf::IntRect(428, 3, 84, 84));
+		addFrame(sf::IntRect(3, 88, 84, 84));
+		addFrame(sf::IntRect(88, 88, 84, 84));
+		break;
+
+	case 2:
+		addFrame(sf::IntRect(173, 88, 84, 84));
+		addFrame(sf::IntRect(258, 88, 84, 84));
+		addFrame(sf::IntRect(343, 88, 84, 84));
+		addFrame(sf::IntRect(428, 88, 84, 84));
+		break;
+
+	case 3:
+		addFrame(sf::IntRect(3, 173, 84, 84));
+		addFrame(sf::IntRect(88, 173, 84, 84));
+		addFrame(sf::IntRect(173, 173, 84, 84));
+		addFrame(sf::IntRect(258, 173, 84, 84));
+		break;
+
+	case 4:
+		addFrame(sf::IntRect(343, 173, 84, 84));
+		addFrame(sf::IntRect(428, 173, 84, 84));
+		addFrame(sf::IntRect(3, 258, 84, 84));
+		addFrame(sf::IntRect(88, 258, 84, 84));
+		break;
+
+	case 5:
+		addFrame(sf::IntRect(173, 258, 84, 84));
+		addFrame(sf::IntRect(258, 258, 84, 84));
+		addFrame(sf::IntRect(343, 258, 84, 84));
+		addFrame(sf::IntRect(428, 258, 84, 84));
+		break;
+
+	case 6:
+		addFrame(sf::IntRect(3, 343, 84, 84));
+		addFrame(sf::IntRect(88, 343, 84, 84));
+		addFrame(sf::IntRect(173, 343, 84, 84));
+		addFrame(sf::IntRect(258, 343, 84, 84));
+		break;
+	}
+
 	if (m_clock.getElapsedTime() > m_time) 
 	{
 		if (m_frames.size() > m_current_frame + 1)
@@ -58,5 +112,9 @@ void AnimatedSprite::update()
 		}
 		m_clock.restart();
 	}
+}
 
+void AnimatedSprite::setAnimation(int t_anime)
+{
+	m_current_frame = t_anime;
 }

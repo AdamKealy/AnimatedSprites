@@ -9,6 +9,8 @@
 using namespace std;
 using namespace sf;
 
+static int animation;
+
 class AnimatedSprite : public Sprite {
 public:
 	AnimatedSprite();
@@ -23,6 +25,7 @@ public:
 	void addFrame(IntRect&);
 	const int getCurrentFrame();
 	void update();
+	void setAnimation(int anime);
 	
 private:
 	Clock m_clock;

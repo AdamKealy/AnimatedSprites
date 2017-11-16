@@ -21,43 +21,6 @@ int main()
 
 	// Setup Players Default Animated Sprite
 	AnimatedSprite animated_sprite(texture);
-	animated_sprite.addFrame(sf::IntRect(3, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(88, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(173, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(258, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(343, 3, 84, 84));	
-	animated_sprite.addFrame(sf::IntRect(428, 3, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(3, 88, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(88, 88, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(173, 88, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(258, 88, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(343, 88, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(428, 88, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(3, 173, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(88, 173, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(173, 173, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(258, 173, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(343, 173, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(428, 173, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(3, 258, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(88, 258, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(173, 258, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(258, 258, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(343, 258, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(428, 258, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(3, 343, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(88, 343, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(173, 343, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(258, 343, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(343, 343, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(428, 343, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(3, 428, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(88, 428, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(173, 428, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(258, 428, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(343, 428, 84, 84));
-	animated_sprite.addFrame(sf::IntRect(428, 428, 84, 84));
-
 
 	// Setup the Player
 	Player player(animated_sprite);
@@ -80,31 +43,37 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 				{
 					input.setCurrent(Input::Action::LEFT);
+					animated_sprite.setAnimation(1);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 				{
 					input.setCurrent(Input::Action::RIGHT);
+					animated_sprite.setAnimation(2);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 				{
 					input.setCurrent(Input::Action::DOWN);
+					animated_sprite.setAnimation(6);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 				{
 					input.setCurrent(Input::Action::UP);
+					animated_sprite.setAnimation(3);
 				}
 			case sf::Event::TextEntered:
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 				{
 					input.setCurrent(Input::Action::SPACE);
+					animated_sprite.setAnimation(4);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
 				{
 					input.setCurrent(Input::Action::X);
+					animated_sprite.setAnimation(5);
 				}
 				break;
 			default:
-				input.setCurrent(Input::Action::IDLE);
+				//input.setCurrent(Input::Action::IDLE);
 				break;
 			}
 		}
@@ -116,7 +85,7 @@ int main()
 		player.update();
 
 		// Clear screen
-		window.clear();
+		window.clear(sf::Color::White);
 
 		// Draw the Players Current Animated Sprite
 		window.draw(player.getAnimatedSprite());
